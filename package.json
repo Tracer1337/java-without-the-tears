@@ -1,0 +1,32 @@
+{
+  "name": "java-without-the-tears",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "java": "./java.js",
+    "java-dev": "./java-dev.ts"
+  },
+  "scripts": {
+    "build": ":"
+  },
+  "keywords": [
+    "typescript",
+    "java"
+  ],
+  "author": "Merlin Moelter",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tracer1337/java-without-the-tears.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tracer1337/java-without-the-tears/issues"
+  },
+  "homepage": "https://github.com/Tracer1337/java-without-the-tears.git",
+  "dependencies": {
+    "commander": "^7.2.0",
+    "ts-node": "^10.0.0",
+    "dotenv": "^10.0.0"
+  }
+}
