@@ -1,3 +1,3 @@
 #!/usr/bin/env ts-node --cwd-mode
-require("java-without-the-tears")
+require("./index.js")
 export default {}

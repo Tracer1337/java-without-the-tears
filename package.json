@@ -25,8 +25,9 @@
   },
   "homepage": "https://github.com/Tracer1337/java-without-the-tears.git",
   "dependencies": {
+    "@types/node": "^16.4.13",
     "commander": "^7.2.0",
-    "ts-node": "^10.0.0",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "ts-node": "^10.0.0"
   }
 }
