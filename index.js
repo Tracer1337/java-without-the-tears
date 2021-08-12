@@ -2,6 +2,15 @@ require("dotenv").config()
 const { Command } = require("commander")
 const path = require("path")
 
+function moduleExists(path) {
+    try {
+        require(path)
+        return true
+    } catch {
+        return false
+    }
+}
+
 const program = new Command()
 program
     .version("1.0.0")
@@ -15,7 +24,15 @@ if (!className) {
 }
 
 const classFilename = className + ".java"
-const classPath = path.join(process.cwd(), options.Classpath, classFilename)
+let classPath = path.join(process.cwd(), options.Classpath, classFilename)
+
+if (!moduleExists(classPath)) {
+    classPath = path.join(process.cwd(), options.Classpath, className)
+}
+
+if (!moduleExists(classPath)) {
+    throw new Error(`Class '${className}' does not exist in ${options.Classpath}`)
+}
 
 const classModule = require(classPath)
 const main = classModule.main || classModule.default.main
