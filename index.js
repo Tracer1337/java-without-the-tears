@@ -35,10 +35,11 @@ if (!moduleExists(classPath)) {
 }
 
 const classModule = require(classPath)
-const main = classModule.main || classModule.default.main
+const moduleDefault = classModule.default || classModule
+const main = moduleDefault.main
 
 if (!main) {
     throw new Error("Missing main method in class " + className)
 }
 
-main(program.args.slice(1))
+main.call(moduleDefault, program.args.slice(1))
